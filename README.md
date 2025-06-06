@@ -45,6 +45,33 @@ jupyter notebook
 
 The analysis uses sample financial data for demonstration purposes. In a production environment, this would be replaced with actual district financial data.
 
+## Automated Dashboard & Pipeline
+
+The repository includes a simple nightly pipeline that processes uploaded CSV files and stores the cleaned result in `data/processed/latest.csv`. Upload your raw files to `data/raw/` and the pipeline will pick up the most recent one.
+
+A GitHub Actions workflow (`.github/workflows/nightly.yml`) runs `scripts/nightly_update.py` every night at 2 AM UTC. It installs dependencies and processes the latest upload.
+
+To run the update locally:
+```bash
+python scripts/nightly_update.py
+```
+
+### Streamlit Configuration
+
+A basic Streamlit app (`src/dashboard.py`) can display the processed data. To use it, create the Streamlit configuration directory:
+```bash
+mkdir -p ~/.streamlit
+```
+Add a `config.toml` with your preferred settings, for example:
+```toml
+[server]
+headless = true
+```
+Run the dashboard with:
+```bash
+streamlit run src/dashboard.py
+```
+
 ## License
 
-MIT License 
+MIT License
