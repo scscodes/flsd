@@ -106,6 +106,8 @@ The dashboard automatically visualizes the latest data with type-specific visual
 - **Market**: Price charts, percent change analysis, and OHLC if available
 - **Forecast**: Combined historical and forecast visualizations
 
+For details on downloading nightly processed data and sharing the dashboard publicly, see [docs/streamlit_deploy.md](docs/streamlit_deploy.md).
+
 ## Directory Structure
 
 ```
