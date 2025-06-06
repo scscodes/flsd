@@ -36,7 +36,7 @@ jobs:
         python scripts/nightly_update.py
         
     - name: Archive processed data
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: processed-data
         path: data/processed/
